@@ -12,8 +12,8 @@ class Workshop(models.Model) :
     title = models.CharField(max_length=31)
     disciption = models.TextField()
     
-    # def __str__(self):
-    #     return f'{self.title}'
+    def __str__(self):
+        return f'{self.title}'
 class User(models.Model):
     personalID = models.CharField(max_length=11)
     password = models.CharField(max_length=16)
