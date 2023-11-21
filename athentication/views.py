@@ -5,8 +5,10 @@ from django.contrib import messages
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view 
 from . import serializer
+from rest_framework.authtoken.models import Token
+
 
 # Create your views here.
 @api_view(['POST','GET'])
@@ -37,8 +39,8 @@ def login_view(request : Request):
 
         # Check if authentication successful
         if user is not None:
-           login(request, user)
-           return Response(True)
+            login(request, user)
+            return Response(True)
 
         else:
             return Response(None)
